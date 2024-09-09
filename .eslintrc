@@ -1,0 +1,9 @@
+{
+  "extends": ["react-app", "react-app/jest"],
+  "rules": {
+    "no-console": "warn",
+    "no-inline-comments": "warn",
+    "no-multiple-empty-lines": "error",
+    "no-const-assign": "error"
+  }
+}

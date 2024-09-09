@@ -1,0 +1,11 @@
+{
+    “applinks”: {
+        “apps”: [],
+        “details”: [
+            {
+                “appID”: “12345678.com.receipthub”,
+                “paths”: [“*”],
+            }
+        ]
+    }
+}
