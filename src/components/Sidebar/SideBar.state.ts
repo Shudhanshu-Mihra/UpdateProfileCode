@@ -15,9 +15,10 @@ export const useSideBarState = () => {
 
 const {
   user: {
-    user:{profile_image_local_url,profile_image_file}, user
+    user:{profile_image_local_url,profile_image_file,profile_image_key}, user
   },
 } = useSelector((state: IState) => state);
+  console.log("profile_image_key" ,profile_image_key);
 const onDelete = async () => {
   const activeAccount = user?.accounts?.find((item: { id: string }) => item.id === user?.active_account)
   if (activeAccount) {

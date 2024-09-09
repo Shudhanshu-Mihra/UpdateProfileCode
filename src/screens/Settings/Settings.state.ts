@@ -5,7 +5,7 @@ import { IState } from 'services/redux/reducer';
 import { getCompressedImage, hitapiwithbinary, setCompanyLogoHandler } from 'services/utils';
 import { updateS3ProfilePhoto } from './MyAccount/myAccount.api';
 import { getProfilePhotoPresiged, s3profileUploadPhoto, s3ProfileCreate,} from './settings.api';
-import { setLocalProfileImageURL, setProfileImage, setUserAvatar } from '../SignUp/reducer/signup.reducer';
+import { setLocalProfileImageURL, setProfileImage, setUserAvatar ,setProfileImageKey } from '../SignUp/reducer/signup.reducer';
 import { file } from '@babel/types';
 import { string } from 'yup';
 import { apiServices } from 'services/api-service';
@@ -99,6 +99,7 @@ const onUploadProfilePhotoHandler = async (event: React.ChangeEvent<HTMLInputEle
         const {data} = await updateS3ProfilePhoto({profile_image:key_url[0].key});
         console.log("updateS3ProfilePhoto data:", data);
         // dispatch(setUserAvatar(data.user.profile_image));
+        dispatch(setProfileImageKey(data.user.profile_image));
         onGetProfilePhoto(data.user.profile_image);
         // test();
       }
